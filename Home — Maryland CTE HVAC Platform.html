@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Maryland CTE HVAC Platform</title>
+  <style>
+    :root {
+      --navy: #0d2b5e;
+      --gold: #f0a500;
+      --red: #c0392b;
+      --light: #f4f6fa;
+      --border: #d0d6e2;
+      --text: #1a1a2e;
+      --green: #27ae60;
+      --amber: #e67e22;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+    header {
+      background: var(--navy); color: white; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    header .logo { font-size: 1.1rem; font-weight: 700; letter-spacing: .5px; }
+    header .logo span { color: var(--gold); }
+    nav a {
+      color: #ccd4e8; text-decoration: none; margin-left: 1.5rem;
+      font-size: .9rem; padding: 4px 0; border-bottom: 2px solid transparent;
+    }
+    nav a:hover, nav a.active { color: white; border-bottom-color: var(--gold); }
+    main { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    h1 { font-size: 1.6rem; color: var(--navy); margin-bottom: .5rem; }
+    h2 { font-size: 1.2rem; color: var(--navy); margin-bottom: .75rem; }
+    .card {
+      background: white; border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 4px; color: #444; }
+    input, select, textarea {
+      width: 100%; border: 1px solid var(--border); border-radius: 6px;
+      padding: .5rem .75rem; font-size: .95rem; font-family: inherit;
+      margin-bottom: 1rem; transition: border-color .2s;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); }
+    textarea { resize: vertical; min-height: 120px; }
+    button {
+      background: var(--navy); color: white; border: none; border-radius: 6px;
+      padding: .6rem 1.4rem; font-size: .95rem; cursor: pointer; font-weight: 600;
+      transition: background .2s;
+    }
+    button:hover { background: #163880; }
+    button.secondary { background: white; color: var(--navy); border: 2px solid var(--navy); }
+    button.secondary:hover { background: #eef1f8; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    .badge {
+      display: inline-block; border-radius: 20px; padding: 3px 10px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .3px;
+    }
+    .badge-4 { background: #d4edda; color: #155724; }
+    .badge-3 { background: #cce5ff; color: #004085; }
+    .badge-2 { background: #fff3cd; color: #856404; }
+    .badge-1 { background: #f8d7da; color: #721c24; }
+    .tag {
+      display: inline-block; background: #e8ecf5; color: var(--navy);
+      border-radius: 4px; padding: 2px 8px; font-size: .78rem; margin: 2px;
+    }
+    .alert { border-radius: 6px; padding: .75rem 1rem; margin-bottom: 1rem; font-size: .9rem; }
+    .alert-info { background: #dbeafe; color: #1e3a5f; border-left: 4px solid var(--navy); }
+    .alert-success { background: #d4edda; color: #155724; border-left: 4px solid var(--green); }
+    .alert-warn { background: #fff3cd; color: #856404; border-left: 4px solid var(--amber); }
+    .spinner { display: inline-block; width: 18px; height: 18px; border: 3px solid rgba(255,255,255,.4); border-top-color: white; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 6px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+    .mono { font-family: 'Courier New', monospace; font-size: .8rem; word-break: break-all; color: #555; }
+    .section-label {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: #888; margin-bottom: .4rem;
+    }
+  </style>
+</head>
+<body data-new-gr-c-s-check-loaded="8.937.0" data-gr-ext-installed="">
+<header>
+  <div class="logo">Maryland CTE <span>HVAC</span> Competency Platform</div>
+  <nav>
+    <a href="http://localhost:8000/" id="nav-home" class="active">Home</a>
+    <a href="http://localhost:8000/student" id="nav-student">Student Portal</a>
+    <a href="http://localhost:8000/teacher" id="nav-teacher">Teacher Dashboard</a>
+    <a href="http://localhost:8000/ledger" id="nav-ledger">Ledger</a>
+  </nav>
+</header>
+<main>
+
+<h1>Maryland CTE HVAC Competency Platform</h1>
+<p style="color:#555; margin-bottom:1.5rem;">AI-powered evidence 
+evaluation aligned to NCCER Level 1 &amp; Maryland CTE standards. 
+Summative records are sealed on an immutable hash-chain ledger.</p>
+
+<div class="grid-2">
+  <a href="http://localhost:8000/student" style="text-decoration:none;">
+    <div class="card" style="border-left:4px solid var(--navy); cursor:pointer;">
+      <h2>🎓 Student Portal</h2>
+      <p style="color:#555; margin-top:.5rem;">Submit evidence for a competency standard and receive instant AI feedback with a targeted follow-up prompt.</p>
+    </div>
+  </a>
+  <a href="http://localhost:8000/teacher" style="text-decoration:none;">
+    <div class="card" style="border-left:4px solid var(--gold); cursor:pointer;">
+      <h2>📋 Teacher Dashboard</h2>
+      <p style="color:#555; margin-top:.5rem;">Review AI evaluations, generate standard-aligned prompts, approve scores, and commit records to the ledger.</p>
+    </div>
+  </a>
+</div>
+
+<div class="card">
+  <h2>Standards Coverage</h2>
+  
+  <div style="margin-bottom:1rem;">
+    <div class="section-label">Part 1: Construction Core (Year 1)</div>
+    <div>
+      
+      <span class="tag">CORE-01: Basic Safety (OSHA 10/30)</span>
+      
+      <span class="tag">CORE-02: Introduction to Construction Math</span>
+      
+      <span class="tag">CORE-03: Introduction to Hand Tools</span>
+      
+      <span class="tag">CORE-04: Introduction to Power Tools</span>
+      
+      <span class="tag">CORE-05: Introduction to Construction Drawings (Blueprints)</span>
+      
+      <span class="tag">CORE-06: Basic Rigging</span>
+      
+      <span class="tag">CORE-07: Material Handling</span>
+      
+    </div>
+  </div>
+  
+  <div style="margin-bottom:1rem;">
+    <div class="section-label">Part 2: HVAC Technical Specialization (Year 2)</div>
+    <div>
+      
+      <span class="tag">HVAC-01: Introduction to HVAC</span>
+      
+      <span class="tag">HVAC-02: HVAC Mathematics</span>
+      
+      <span class="tag">HVAC-03: Basic Electricity</span>
+      
+      <span class="tag">HVAC-04: Piping and Tubing Practices</span>
+      
+      <span class="tag">HVAC-05: Soldering and Brazing</span>
+      
+      <span class="tag">HVAC-06: Introduction to Cooling and Refrigeration Cycles</span>
+      
+      <span class="tag">HVAC-07: Introduction to Heating Systems</span>
+      
+      <span class="tag">HVAC-08: Leak Detection, Evacuation, Recovery, and Charging</span>
+      
+      <span class="tag">HVAC-09: Air Distribution and Sheet Metal Duct Systems</span>
+      
+      <span class="tag">HVAC-10: Basic Troubleshooting</span>
+      
+    </div>
+  </div>
+  
+</div>
+
+<div class="card">
+  <h2>How It Works</h2>
+  <ol style="padding-left:1.2rem; color:#444; line-height:2;">
+    <li>Teacher assigns a standard and the platform generates a targeted reflection prompt.</li>
+    <li>Student writes their evidence response in the Student Portal.</li>
+    <li>Claude AI evaluates the response against the NCCER rubric and identifies gaps.</li>
+    <li>Teacher reviews the evaluation and approves the summative score.</li>
+    <li>The record is sealed on the hash-chain ledger — tamper-evident and transparent.</li>
+  </ol>
+</div>
+
+</main>
+<script>
+  const path = window.location.pathname;
+  if (path === '/') document.getElementById('nav-home').classList.add('active');
+  else if (path.startsWith('/student')) document.getElementById('nav-student').classList.add('active');
+  else if (path.startsWith('/teacher')) document.getElementById('nav-teacher').classList.add('active');
+  else if (path.startsWith('/ledger')) document.getElementById('nav-ledger').classList.add('active');
+</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
